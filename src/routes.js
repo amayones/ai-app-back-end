@@ -4,8 +4,11 @@ const routes = (handler) => [
     path: '/predict',
     handler: handler.getPredictResult,
     options: {
-      allow: 'multipart/form-data',
-      multipart: true,
+      payload: {
+        multipart: true,
+        parse: true,
+        output: 'data'
+      }
     }
   }
 ];
