@@ -1,4 +1,4 @@
-class handler {
+class Handler {
   constructor(modelService) {
     this._modelService = modelService;
 
@@ -20,3 +20,5 @@ class handler {
     });
   }
 }
+
+module.exports = Handler;
