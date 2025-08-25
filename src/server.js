@@ -1,6 +1,7 @@
 const Hapi = require('@hapi/hapi');
 const routes = require('./routes');
 const Handler = require('./handler');
+const PredictService = require('./predict-service');
 
 const init = async () => {
   const server = Hapi.server({
@@ -8,6 +9,7 @@ const init = async () => {
     host: '0.0.0.0',
   });
 
+  const predictService = new PredictService();
   const handler = new Handler(predictService);
   server.route(routes(handler));
 
